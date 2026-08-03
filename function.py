@@ -3,6 +3,7 @@ import selectorlib
 import smtplib
 import ssl
 import time
+from datetime import datetime
 
 
 def scrape(url):
@@ -43,8 +44,10 @@ def send_email(message):
 
 
 def store(extracted):
+    now = datetime.now().strftime("%y-%m-%d-%H-%M-%S")
     with open("data.txt", "a") as file:
-        file.write(extracted + "\n")
+        line = f"{now},{extracted}\n"
+        file.write(line)
 
 
 def read(extracted):

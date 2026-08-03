@@ -1,2 +1,2 @@
 temperature:
-  css: '#temperatureId'
+  css: '#temperatureId > b'
